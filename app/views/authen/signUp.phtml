@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phalcon PHP Framework</title>
+    <?php echo $this->assets->outputCss('styles'); ?>    
+    <?php echo $this->assets->outputJs('scripts'); ?> 
+  </head>
+    <body id="page-top" >
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="<?php echo $this->url->getBaseUri();?>">Proj on fire</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo $this->url->getBaseUri();?>event">Event</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo $this->url->getBaseUri();?>about">About</a>
+              
+            </li>
+            
+          </ul>
+           <ul class="navbar-nav  navbar-right">     
+    </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="container bg-primary row-full" id="mainNav";> 
+  
+    <div class="col-sm">
+  <form action="" method="post" >
+  <input type="hidden"  name="profileId"  value="<?php echo $profile->id;?>">
+  <div class="form-group">
+  <br><br>
+    <label>Email address</label>
+    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email"  required >
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+  </div>
+  <div class="form-group">
+    <label>Firstname</label>
+    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Firstname"  required  >
+</div>
+
+   
+  <button type="submit" class="btn btn-info">Submit</button>
+  
+  <a href="<?php echo $this->url->getBaseUri(); ?>" class="btn btn-warning">Back</a>
+</div>
+</form>
+</div>
+
+<div class="navbar-expand-lg copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Your Website 2018</small>
+      </div>
+    </div>
+
+  </body>
+
+</html>
+      
