@@ -15,7 +15,6 @@ class Eventcontroller extends ControllerBase{
   public function signUpAction(){
     if($this->request->isPost()){
         $photoUpdate = '';
-        $photoUpdate = '';
             if ($this->request->hasFiles() == true) {
                 $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
                 $uploads = $this->request->getUploadedFiles();
@@ -23,8 +22,8 @@ class Eventcontroller extends ControllerBase{
                 $isUploaded = false;
                 foreach ($uploads as $upload) {
                     if (in_array($upload->gettype(), $allowed)) {
-                        $photoName = md5(uniqid(rand(), true)) . strtolower($upload->getname());
-                        $path = '../public/img/' . $photoName;
+                        $photoName = md5(uniqid(rand(), true)).strtolower($upload->getname());
+                        $path = '../public/img/'.$photoName;
                         ($upload->moveTo($path)) ? $isUploaded = true : $isUploaded = false;
                     }
                 }

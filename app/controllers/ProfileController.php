@@ -11,7 +11,6 @@ class ProfileController extends ControllerBase
     public function indexAction()
     {
         if ($this->request->isPost()) {
-
             $photoUpdate = '';
             if ($this->request->hasFiles() == true) {
                 $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
@@ -20,8 +19,8 @@ class ProfileController extends ControllerBase
                 $isUploaded = false;
                 foreach ($uploads as $upload) {
                     if (in_array($upload->gettype(), $allowed)) {
-                        $photoName = md5(uniqid(rand(), true)) . strtolower($upload->getname());
-                        $path = '../public/img/' . $photoName;
+                        $photoName = md5(uniqid(rand(), true)).strtolower($upload->getname());
+                        $path = '../public/img/'.$photoName;
                         ($upload->moveTo($path)) ? $isUploaded = true : $isUploaded = false;
                     }
                 }
@@ -41,7 +40,7 @@ class ProfileController extends ControllerBase
             $profileObj = User::findFirst($profileId);
             $profileObj->username = $email;
 			$profileObj->first_name = $firstname;
-			$profileObj->picture=$photoUpdate;
+			$profileObj->picture= $photoUpdate;
             $profileObj->save();
 		}
 		else 

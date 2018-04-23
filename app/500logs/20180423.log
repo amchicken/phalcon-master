@@ -1,0 +1,2 @@
+[Mon, 23 Apr 18 16:49:42 +0700][ERROR] [0]: Column 'profile' doesn't belong to any of the selected models (1), when preparing: SELECT [Event].* FROM [Event] WHERE profile LIMIT :APL0:
+
